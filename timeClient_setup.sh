@@ -19,9 +19,9 @@ else
 fi
 # --------------------------------------------------------
 
-echo "** System - Update and Upgrade **"
-apt-get update
-apt-get upgrade -y
+# echo "** System - Update and Upgrade **"
+# apt-get update
+# apt-get upgrade -y
 
 
 echo "** Stopping NTP Daemon**"
@@ -37,7 +37,7 @@ cd /tmp
 
 wget http://http.debian.net/debian/pool/main/c/chrony/chrony_1.30.orig.tar.gz
 tar -zxvf chrony_1.30.orig.tar.gz
-cd chrony_1.30
+cd chrony-1.30
 
 ./configure
 
