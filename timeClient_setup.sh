@@ -34,9 +34,18 @@ echo "** Installing Chrony **"
 # apt-get install chrony -y
 
 cd /tmp
-wget http://http.us.debian.org/debian/pool/main/c/chrony/chrony_1.30-2+deb8u2_armhf.deb
 
-dpkg -i chrony_1.30-2+deb8u2_armhf.deb
+wget http://http.debian.net/debian/pool/main/c/chrony/chrony_1.30.orig.tar.gz
+tar -zxvf chrony_1.30.orig.tar.gz
+cd chrony_1.30
+
+./configure
+
+make
+make install
+
+# wget http://http.us.debian.org/debian/pool/main/c/chrony/chrony_1.30-2+deb8u2_armhf.deb
+# dpkg -i chrony_1.30-2+deb8u2_armhf.deb
 
 echo "** Chrony Install Complete **"
 
