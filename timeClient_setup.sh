@@ -39,7 +39,6 @@ dpkg -i chrony_1.30-2+deb8u2_arm64.deb
 
 echo "** Chrony Install Complete **"
 
-
 echo "noSYNC | Current SetTime: $(date)"
 
 
