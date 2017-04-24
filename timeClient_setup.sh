@@ -30,7 +30,13 @@ $NTP_SYS_PATH stop
 
 
 echo "** Installing Chrony **"
-apt-get install chrony -y
+# apt-get install chrony -y
+
+cd /tmp
+wget http://http.us.debian.org/debian/pool/main/c/chrony/chrony_1.30-2+deb8u2_arm64.deb
+
+dpkg -i chrony_1.30-2+deb8u2_arm64.deb
+
 echo "** Chrony Install Complete **"
 
 
