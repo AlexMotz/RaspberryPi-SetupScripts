@@ -2,12 +2,22 @@
 
 echo "Chrony - TimeSync Server | Setup"
 
-# ---------- Check if user is root ----------
+# ----------------- Check if user is root ----------------
 if [ "$(whoami)" != "root" ]; then
 	echo "Sorry, you are not root."
 	exit 1
 fi
-# -------------------------------------------
+
+# ------- Check if system is connected to Internet -------
+wget -q --tries=10 --timeout=20 --spider http://google.com
+if [[ $? -eq 0 ]]; then
+        echo "Success | System is Connected to Internet"
+else
+        echo "FAIL | System is not Connected to Internet"
+        echo "Terminating - TimeSync Client Setup"
+        exit 1
+fi
+# --------------------------------------------------------
 
 echo "** System - Update and Upgrade **"
 apt-get update && apt-get upgrade -y
