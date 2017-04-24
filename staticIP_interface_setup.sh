@@ -19,10 +19,15 @@ read  INTERFACE_NAME
 echo -e "Enter Static IP Address: \c "
 read  STATIC_IP
 
-INTERFACE_CONFIG='/etc/network/Interfaces'
+INTERFACE_CONFIG='/etc/network/interfaces'
 
+setupfile1="auto lo"
+echo $setupfile1 >> $INTERFACE_CONFIG
 
-line1="\nauto $INTERFACE_NAME"
+setupfile2="iface lo inet loopback"
+echo $setupfile2 >> $INTERFACE_CONFIG
+
+line1="auto $INTERFACE_NAME"
 echo $line1 >> $INTERFACE_CONFIG
 
 line2="iface $INTERFACE_NAME inet static"
