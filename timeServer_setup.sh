@@ -20,7 +20,8 @@ fi
 # --------------------------------------------------------
 
 echo "** System - Update and Upgrade **"
-apt-get update && apt-get upgrade -y
+apt-get update
+apt-get upgrade -y
 
 
 echo "** Stopping NTP Daemon**"
