@@ -27,7 +27,7 @@ apt-get upgrade -y
 echo "** Stopping NTP Daemon**"
 NTP_SYS_PATH='/etc/init.d/ntp'
 $NTP_SYS_PATH stop
-apt-get --purge remove ntp
+apt-get --purge remove ntp -y
 
 
 echo "** Installing Chrony **"
