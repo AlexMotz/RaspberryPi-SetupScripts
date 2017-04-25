@@ -61,6 +61,12 @@ EOF
 
 chmod 644 $CHRONY_CONFIG_FILE_PATH
 
+
+# --------- Set timezone to UTC ---------
+echo "Etc/UTC" > /etc/timezone
+dpkg-reconfigure -f noninteractive tzdata
+
+
 echo "** Restarting Chrony... **"
 systemctl restart chrony
 echo "** Chrony Started! **"
