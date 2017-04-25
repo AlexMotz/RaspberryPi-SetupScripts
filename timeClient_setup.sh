@@ -79,6 +79,11 @@ echo "chronyc online" >> $PPPD_CONFIG_UP
 echo "chronyc offline" >> $PPPD_CONFIG_DOWN
 # ------- End Appdend PPPD Config -------
 
+# --------- Set timezone to UTC ---------
+echo "Etc/UTC" > /etc/timezone
+dpkg-reconfigure -f noninteractive tzdata
+
+
 echo "** Restarting Chrony... **"
 systemctl restart chrony
 echo "** Chrony Started! **"
